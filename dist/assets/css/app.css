@@ -1,0 +1,59 @@
+/**
+ * Autoparts Widget
+ * @authors: luisepifanio, battaglr
+ */
+
+.aps-container {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.aps-heading {
+    margin: 0 0 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+}
+
+.aps-select {
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.aps-actions {
+    margin-top: 1px;
+}
+
+/* Bump specificity to override Chico's defaults. */
+.aps-actions .aps-button {
+    /* Override Chico's defaults. */
+    margin-left: 0;
+    letter-spacing: 0.04em;
+}
+
+.aps-actions .aps-button:active {
+    color: #fff;
+}
+
+/* Bump specificity to override Chico's defaults. */
+.aps-actions .asp-link {
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.aps-loading {
+    margin: 0 auto 7px;
+    /* Override Chico's defaults. */
+    display: block;
+}
+
+.aps-is-hidden {
+    /* Uses `!important` since it should override any other style. */
+    display: none !important;
+}
+
+/**
+ * Main css
+ * @authors: luis.epifanio
+ */

@@ -1,0 +1,25 @@
+https://www.npmjs.org/package/gulp-coverage
+http://www.evlsnoopy.com/why-i-switched-to-gulpjs/
+https://github.com/dylanb/gulp-coverage
+https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/
+https://github.com/thegrtman/javascript-test-framework-comparison/blob/master/Mocha/package.json
+https://gist.githubusercontent.com/ktmud/9384509/raw/e7c6364cebdd7f618a37772953cc9df459fb18bd/gulpfile.js
+http://jsfiddle.net/xX4j4/
+http://attackofzach.com/setting-up-a-project-using-karma-with-mocha-and-chai/
+https://github.com/gulpjs/gulp/blob/master/docs/recipes/mocha-test-runner-with-gulp.md
+http://marcofranssen.nl/using-mocha-chai-sinon-to-test-node-js/
+http://informatics.unep-wcmc.org/post/86302609060/how-we-test-client-side-javascript-setup-and-patterns
+https://www.npmjs.org/doc/cli/npm-install.
+https://github.com/bengurgel/gulp-project-template/blob/master/gulpfile.js
+http://ryankent.ca/starting-a-new-project-with-laravel-5-gulp-bower-and-bootstrap/
+
+https://www.npmjs.org/package/gulp-mocha-phantomjs
+
+<!-- IMPORTANT -->
+http://www.evlsnoopy.com/why-i-switched-to-gulpjs/
+
+-------------------------------
+
+    // "gulp-connect": "~2.0.6",
+    // "public": "git://github.com/user/repo.git#ref",
+    // "private": "git+ssh://git@github.com:user/repo.git#ref"

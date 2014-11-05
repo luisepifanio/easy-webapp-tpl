@@ -1,0 +1,36 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "authors": [
+    "Luis G. Epifanio <luis.epifanio@mercadolibre.com>"
+  ],
+  "description": "Sinple demo project with Gulp and mocha",
+  "main": "gulpfile.js",
+  "keywords": [
+    "gulp",
+    "mocha",
+    "coverage"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/scripts/vendor_libs/",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.15.1",
+    "sinonjs": "~1.7.3"
+  },
+  "dependencies": {
+    "jquery": "1.11.1",
+    "normalize.css": "~3.0.2",
+    "html5shiv": "~3.7.2",
+    "zeptojs": "~1.1.4",
+    "es5-shim": "~4.0.3"
+  }
+}
