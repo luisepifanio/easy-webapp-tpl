@@ -10,4 +10,4 @@ before_script:
   - npm install -g gulp
 
 script:
-  - karma start  --browsers=Firefox
+  - gulp
