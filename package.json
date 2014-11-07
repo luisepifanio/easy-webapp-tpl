@@ -61,5 +61,5 @@
         "chai",
         "sinon",
         "express"
-    ],
+    ]
 }
