@@ -3,8 +3,10 @@
 (function() {
     'use strict';
 
-    var gulp = require('gulp')
-        , webserver
+    var gulp = require('gulp'),
+        karma = require('karma').server,
+        paths = require('./paths.json'),
+        webserver
         ;
     var config = {
             liveReloadPort : 35729
@@ -14,8 +16,8 @@
                 ,  host   : 'localhost'
                 ,  port   : 8282
             }
-        },
-        paths = require('./paths.json');
+        }
+        ;
 
     function getServerPath(){
         return [
@@ -104,32 +106,17 @@
         return promise;
     }
 
-    gulp.task('coverage', function () {
-        var istanbul = require('gulp-istanbul'),
-            mochaPhantomJS = require('gulp-mocha-phantomjs')
-            ;
+    gulp.task('coverage', function (done) {
+      karma.start({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+      }, done);
+    });
 
-        return gulp.src(paths.dev.js)
-                    .pipe(istanbul({includeUntested: true}))
-                    .on('finish', function () {
-                        gulp.src(paths.test.runner)
-                            .pipe(mochaPhantomJS({
-                                                reporter: 'spec',
-                                                mocha: { },
-                                                phantomjs: {
-                                                    ignoreSslErrors: true,
-                                                    viewportSize: {
-                                                        width: 1024,
-                                                        height: 768
-                                                    }
-                                                }
-                                            })
-                            ).pipe(istanbul.writeReports(
-                                {   dir: './docs/unit-test-coverage',
-                                    reporters: [ 'lcov' ],
-                                    reportOpts: { dir: './docs/unit-test-coverage'}
-                                }));
-                    });
+    gulp.task('tdd', function (done) {
+      karma.start({
+        configFile: __dirname + '/karma.conf.js'
+      }, done);
     });
 
     gulp.task('test', function () {
@@ -216,9 +203,7 @@
     // Default task that will be run
     // when no parameter is provided
     // to gulp
-    gulp.task('default',['serve'], function () {
-       console.log('ALOHA!');
-    });
+    gulp.task('default',['coverage']);
 
 
 }());
