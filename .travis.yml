@@ -7,7 +7,7 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 
 before_script:
-  - npm install -g karma
+  - npm install -g gulp
 
 script:
   - karma start  --browsers=Firefox
