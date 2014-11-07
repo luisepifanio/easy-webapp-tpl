@@ -1,7 +1,12 @@
 {
     "name": "easy-webapp-tpl",
     "version": "0.0.1",
-    "description": "Simple WebApp template using Gulp",
+    "description": "Simple WebApp Template Project",
+    "license": "GPL-3.0",
+    "author": {
+        "name": "Luis G. Epifanio",
+        "email": "luisepifanio@gmail.com"
+    },
     "main": "gulpfile.js",
     "directories": {
         "doc": "docs",
@@ -13,6 +18,12 @@
     },
     "dependencies": {
         "gulp": "~3.8.9"
+    },
+    "engines": {
+        "node": ">=0.10.13"
+    },
+    "scripts": {
+        "test": "gulp"
     },
     "devDependencies": {
         "chai": "~1.8.1",
@@ -44,9 +55,6 @@
         "serve-static": "~1.7.1",
         "tiny-lr": "~0.1.4"
     },
-    "scripts": {
-        "test": "runtest"
-    },
     "keywords": [
         "gulp",
         "mocha",
@@ -54,6 +62,4 @@
         "sinon",
         "express"
     ],
-    "author": "Luis G. Epifanio",
-    "license": "BSD"
 }
