@@ -6,38 +6,16 @@
     var gulp = require('gulp')
         , webserver
         ;
-    var
-     config = {
-        liveReloadPort : 35729
-        , hostConfig : {
-               https  : false
-            ,  root : __dirname +"/"
-            ,  host   : 'localhost'
-            ,  port   : 8282
-        }
-    }
-    , paths = {
-        'gulpfile' : 'gulpfile.js',
-        'dev': {
-            'files'    : 'app/**/*'
-            ,'html'    : ['app/**/*.html','app/**/*.htm']
-            , 'js'     : ['app/scripts/**/*.js']
-            , 'jsdir'  : 'app/scripts/'
-            , 'coffee' : ['app/scripts/**/*.coffee']
-            , 'css'    : ['app/assets/css/**/*.css']
-            , 'styl'   : ['app/assets/css/**/*.styl']
-            , 'images' : ['app/assets/images/**/*.*']
-            , 'test'   : ['test/**/*.specs.js']
-            , 'bower'  : ['bower.json', '.bowerrc']
-            , 'vendor' : ['app/assets/vendor_libs/']
+    var config = {
+            liveReloadPort : 35729
+            , hostConfig : {
+                   https  : false
+                ,  root : __dirname +"/"
+                ,  host   : 'localhost'
+                ,  port   : 8282
+            }
         },
-        'prod': {
-              'cssapp' : 'app.css'
-            , 'cssdir' : 'dist/assets/css/'
-            , 'jsapp'  : 'app.js'
-            , 'jsdir'  : 'dist/assets/scripts/'
-        }
-    };
+        paths = require('./paths.json');
 
     function getServerPath(){
         return [
@@ -125,6 +103,34 @@
             });
         return promise;
     }
+
+    gulp.task('coverage', function () {
+        var istanbul = require('gulp-istanbul'),
+            mochaPhantomJS = require('gulp-mocha-phantomjs')
+            ;
+
+        return gulp.src(paths.dev.js)
+                    .pipe(istanbul({includeUntested: true}))
+                    .on('finish', function () {
+                        gulp.src(paths.test.runner)
+                            .pipe(mochaPhantomJS({
+                                                reporter: 'spec',
+                                                mocha: { },
+                                                phantomjs: {
+                                                    ignoreSslErrors: true,
+                                                    viewportSize: {
+                                                        width: 1024,
+                                                        height: 768
+                                                    }
+                                                }
+                                            })
+                            ).pipe(istanbul.writeReports(
+                                {   dir: './docs/unit-test-coverage',
+                                    reporters: [ 'lcov' ],
+                                    reportOpts: { dir: './docs/unit-test-coverage'}
+                                }));
+                    });
+    });
 
     gulp.task('test', function () {
         var promise = getStartedExpressPromise();

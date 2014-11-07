@@ -1,3 +1,4 @@
 node_modules
 .DS_Store
 app/assets/scripts/vendor_libs
+docs/unit-test-coverage/

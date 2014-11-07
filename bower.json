@@ -31,6 +31,7 @@
     "normalize.css": "~3.0.2",
     "html5shiv": "~3.7.2",
     "zeptojs": "~1.1.4",
-    "es5-shim": "~4.0.3"
+    "es5-shim": "~4.0.3",
+    "i18next": "i18next/i18next#~1.7.4"
   }
 }

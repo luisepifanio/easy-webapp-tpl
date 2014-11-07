@@ -1,0 +1,25 @@
+{
+    "gulpfile": "gulpfile.js",
+    "dev": {
+        "files": "app/**/*",
+        "html": ["app/**/*.html", "app/**/*.htm"],
+        "js": ["app/scripts/**/*.js"],
+        "jsdir": "app/scripts/",
+        "coffee": ["app/scripts/**/*.coffee"],
+        "css": ["app/assets/css/**/*.css"],
+        "styl": ["app/assets/css/**/*.styl"],
+        "images": ["app/assets/images/**/*.*"],
+        "test": ["test/**/*.specs.js"],
+        "bower": ["bower.json", ".bowerrc"],
+        "vendor": ["app/assets/vendor_libs/"]
+    },
+    "test": {
+        "runner": "test/runner.html"
+    },
+    "prod": {
+        "cssapp": "app.css",
+        "cssdir": "dist/assets/css/",
+        "jsapp": "app.js",
+        "jsdir": "dist/assets/scripts/"
+    }
+}
